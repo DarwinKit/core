@@ -1,0 +1,14 @@
+@import "../globals.css";
+
+.darwinKit-comboBox {
+  padding: 10px;
+  appearance: none;
+  width: 20%;
+  transition: 0.2s ease-in-out;
+  border: 1px solid var(--graySecondary);
+  border-radius: 5px;
+}
+
+.darwinKit-comboBox:hover {
+  background-color: var(--graySecondary);
+}

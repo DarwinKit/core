@@ -1,0 +1,25 @@
+@import "../globals.css";
+
+#darwinKit-inputField::-webkit-outer-spin-button,
+#darwinKit-inputField::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#darwinKit-inputField[type="number"] {
+  -moz-appearance: textfield;
+}
+
+#darwinKit-inputField:focus {
+  outline: 3px solid var(--bluePrimary);
+  transition: 50ms ease-in-out;
+}
+
+#darwinKit-inputField[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 1em;
+  width: 1em;
+  transition: 0.5s;
+  opacity: 1;
+  background: url(../../../public/x-circle-fill.svg) no-repeat 50% 50%;
+}
