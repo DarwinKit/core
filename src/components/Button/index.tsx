@@ -1,15 +1,19 @@
+import { IoIosArrowBack } from "react-icons/io";
 import { Colors } from "../globalVariables";
 import React from "react";
 
 export interface ButtonProps {
-  children?: any;
+  children?: JSX.Element | string;
   size?: "md" | "lg" | "xl";
-  type: "plain" | "gray" | "tinted" | "filled";
+  type: "plain" | "gray" | "tinted" | "filled" | "backNavigation";
 }
 
 const Button = (props: ButtonProps) => {
   const plainButtonStyle = {
+    display: "flex",
+    alignItems: "center",
     backgroundColor: "transparent",
+    cursor: "pointer",
     border: "none",
     color: Colors.bluePrimary,
     padding:
@@ -48,6 +52,15 @@ const Button = (props: ButtonProps) => {
     color: "#fff",
   };
 
+  const backNavigationSizing =
+    props.size === "md"
+      ? 20
+      : props.size === "lg"
+      ? 20
+      : props.size === "xl"
+      ? 30
+      : 10;
+
   return (
     <button
       style={
@@ -62,6 +75,9 @@ const Button = (props: ButtonProps) => {
           : plainButtonStyle
       }
     >
+      {props.type === "backNavigation" && (
+        <IoIosArrowBack size={backNavigationSizing} />
+      )}
       {props.children}
     </button>
   );
